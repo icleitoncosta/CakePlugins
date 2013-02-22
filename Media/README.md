@@ -8,14 +8,14 @@
 <h1>Como usar?</h1>
 <p>1. Chame as helpers no Controller que for usar (preferencialmente no AppController se for utilizar pelo site inteiro).</p>
 <p><code>
-  public $uses=array('Media.Crop','Media.Resize');
+  public $helpers=array('Media.Crop','Media.Resize');
 </code></p>
 <p>2. Na view basta utilizar as funções para criar os links para as imagens.</p>
 <p><code>
-  $width=150;<br>
-  $height=150;<br>
-  echo $this->Crop->image('/img/imagem1.jpg',$width,$height); //Retorna &lt;img src="/media/crop/150x150/img/imagem1.jpg" alt="" /&gt;<br>
-  echo $this->Resize->image('/img/imagem1.jpg',$width,$height); //Retorna &lt;img src="/media/resize/200x200/img/imagem1.jpg" alt="" /&gt;<br>
+$width=150;<br>
+$height=150;<br>
+echo $this->Crop->image('/img/imagem1.jpg',$width,$height); //Retorna &lt;img src="/media/crop/150x150/img/imagem1.jpg" alt="" /&gt;<br>
+echo $this->Resize->image('/img/imagem1.jpg',200,200,array('alt'=>'Imagem 01')); //Retorna &lt;img src="/media/resize/200x200/img/imagem1.jpg" alt="Imagem 01" /&gt;<br>
 echo $this->Crop->url('/img/imagem1.jpg',$width,$height); //Retorna apenas o caminho do thumb "/media/crop/150x150/img/imagem1.jpg", pode ser usado em um link por exemplo</code><code><br>
 </code></p>
 <h1>Créditos</h1>

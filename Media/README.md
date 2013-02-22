@@ -6,12 +6,12 @@
 <p>2. Pegue o arquivo tb_media_images.sql de dentro da pasta &quot;SQL&quot; do plugin e restaure como backup, ou gere a tabela no banco de dados usando a mesma estrutura que está no arquivo.</p>
 <p>3. Se o seu servidor não tem permissão de escrita nas pastas, crie a pasta media_cache dentro da pasta webroot/img, ficando webroot/img/media_cache, com as permissões 0777 (Leitura + escrita + exec.), caso tenha permissão então o plugin irá gerar automaticamente esta pasta.</p>
 <h1>Como usar?</h1>
-<p>1. Chame as helpers no Controller que for usar (preferencialmente no AppController se for utilizar pelo site inteiro).</p>
-<p><code>
-  public $helpers=array('Media.Crop','Media.Resize');
-</code></p>
-<p>2. Na view basta utilizar as funções para criar os links para as imagens.</p>
-<p><code>
+<p>1. Ative o plugin no bootstrap.php</p>
+<code>CakePlugin::load('Media',array('routes'=>true)); //Routes é importante</code>
+<p>2. Chame as helpers no Controller que for usar (preferencialmente no AppController se for utilizar pelo site inteiro).</p>
+<code>public $helpers=array('Media.Crop','Media.Resize');</code>
+<p>3. Na view basta utilizar as funções para criar os links para as imagens.</p>
+<code>
 $width=150;<br>
 $height=150;<br><br>
 
@@ -21,7 +21,6 @@ echo $this->Resize->image('/img/imagem1.jpg',200,200,array('alt'=>'Imagem 01'));
 
 echo $this->Crop->url('/img/imagem1.jpg',$width,$height);<br> //Retorna apenas o caminho do thumb "/media/crop/150x150/img/imagem1.jpg", pode ser usado em um link por exemplo<br><br>
 </code>
-</p>
 <h1>Créditos</h1>
 <p>Eu (desenvolvimento do plugin, e não ligo muito para créditos).</p>
 <p>Davi Ferreira (<a href="http://www.daviferreira.com" target="_blank">http://www.daviferreira.com</a>), desenvolvimento da classe canvas, utilizada para gerar as imagens reduzidas, praticamente o &quot;coração&quot; do plugin. Mais sobre a classe <a href="http://www.daviferreira.com/posts/canvas-nova-classe-para-manipulacao-e-redimensionamento-de-imagens-com-php" target="_blank">aqui</a>.</p>

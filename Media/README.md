@@ -14,10 +14,11 @@
 <p><code>
 $width=150;<br>
 $height=150;<br>
-echo $this->Crop->image('/img/imagem1.jpg',$width,$height); //Retorna &lt;img src="/media/crop/150x150/img/imagem1.jpg" alt="" /&gt;<br>
-echo $this->Resize->image('/img/imagem1.jpg',200,200,array('alt'=>'Imagem 01')); //Retorna &lt;img src="/media/resize/200x200/img/imagem1.jpg" alt="Imagem 01" /&gt;<br>
-echo $this->Crop->url('/img/imagem1.jpg',$width,$height); //Retorna apenas o caminho do thumb "/media/crop/150x150/img/imagem1.jpg", pode ser usado em um link por exemplo</code><code><br>
-</code></p>
+echo $this->Crop->image('/img/imagem1.jpg',$width,$height);<br> //Retorna &lt;img src="/media/crop/150x150/img/imagem1.jpg" alt="" /&gt;<br>
+echo $this->Resize->image('/img/imagem1.jpg',200,200,array('alt'=>'Imagem 01'));<br> //Retorna &lt;img src="/media/resize/200x200/img/imagem1.jpg" alt="Imagem 01" /&gt;<br><br>
+echo $this->Crop->url('/img/imagem1.jpg',$width,$height);<br> //Retorna apenas o caminho do thumb "/media/crop/150x150/img/imagem1.jpg", pode ser usado em um link por exemplo
+</code>
+</p>
 <h1>Créditos</h1>
 <p>Eu (desenvolvimento do plugin, e não ligo muito para créditos).</p>
 <p>Davi Ferreira (<a href="http://www.daviferreira.com" target="_blank">http://www.daviferreira.com</a>), desenvolvimento da classe canvas, utilizada para gerar as imagens reduzidas, praticamente o &quot;coração&quot; do plugin. Mais sobre a classe <a href="http://www.daviferreira.com/posts/canvas-nova-classe-para-manipulacao-e-redimensionamento-de-imagens-com-php" target="_blank">aqui</a>.</p>
